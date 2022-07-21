@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: webhook:latest
+    env_file: .env
+    networks:
+      - webhook_network
+    ports:
+    - "8081:8081"
+networks:
+  webhook_network:
